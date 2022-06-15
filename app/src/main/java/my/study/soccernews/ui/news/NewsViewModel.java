@@ -7,25 +7,48 @@ import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import my.study.soccernews.data.remote.SoccerNewsApi;
 import my.study.soccernews.domain.News;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NewsViewModel extends ViewModel {
 
-    private final MutableLiveData<List<News>> news;
+    private final MutableLiveData<List<News>> news = new MutableLiveData<>();
+    private final SoccerNewsApi api;
 
     public NewsViewModel() {
-        this.news = new MutableLiveData<>();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://lucasfpastre.github.io/api-noticias-dio/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
-        //TODO Remover Mock de Notícias
-        List<News> news = new ArrayList<>();
-        news.add(new News("Mussum","Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius."));
-        news.add(new News("Cacilds","Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi."));
-        news.add(new News("Abertis","Nullam volutpat risus nec leo commodo, ut interdum diam laoreet."));
-
-        this.news.setValue(news);
+        api = retrofit.create(SoccerNewsApi.class);
+        this.findNews();
     }
 
-    public LiveData<News> getNews() {
+    private void findNews() {
+        api.getNews().enqueue(new Callback<List<News>>() {
+            @Override
+            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
+                if (response.isSuccessful()) {
+                    news.setValue(response.body());
+                } else {
+                    //TODO Pensar em uma estratégia de tratamento de erros
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<News>> call, Throwable t) {
+                //TODO Pensar em uma estratégia de tratamento de erros
+            }
+        });
+    }
+
+    public LiveData<List<News>> getNews() {
         return this.news;
     }
 }
