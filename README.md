@@ -1,1 +1,4 @@
-# app-noticias-dio
+# App Notícias DIO
+
+1. Criação do App e Desenvolvimento de Funcionalidades Básicas
+    [release/criacao-e-funcionalidades-basicas](https://github.com/lucasfpastre/app-noticias-dio/tree/release/criacao-e-funcionalidades-basicas)
