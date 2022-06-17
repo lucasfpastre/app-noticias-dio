@@ -60,13 +60,13 @@
             app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
 
         <ImageView
-            android:id="@+id/imFavorite"
+            android:id="@+id/ivFavorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/default_margin"
             android:contentDescription="@string/cd_favorite_icon"
             app:layout_constraintBottom_toBottomOf="@+id/btOpenLink"
-            app:layout_constraintEnd_toStartOf="@+id/imShare"
+            app:layout_constraintEnd_toStartOf="@+id/ivShare"
             app:layout_constraintTop_toTopOf="@+id/btOpenLink"
             app:srcCompat="@drawable/ic_favorite"
             android:background="?attr/selectableItemBackgroundBorderless"
@@ -76,14 +76,14 @@
             />
 
         <ImageView
-            android:id="@+id/imShare"
+            android:id="@+id/ivShare"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/default_margin"
             android:contentDescription="@string/cd_share_icon"
-            app:layout_constraintBottom_toBottomOf="@+id/imFavorite"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFavorite"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imFavorite"
+            app:layout_constraintTop_toTopOf="@+id/ivFavorite"
             app:srcCompat="@drawable/ic_share" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
