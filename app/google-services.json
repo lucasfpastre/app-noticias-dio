@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "129018470748",
+    "project_id": "aplicativo-de-noticias-esporte",
+    "storage_bucket": "aplicativo-de-noticias-esporte.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129018470748:android:1fcf4d40f446c3fdaa6199",
+        "android_client_info": {
+          "package_name": "my.study.soccernews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129018470748-7c9rgj80dj6n1mgdrksc2c6bise711j5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyBJtfp8V4-H9bSM0PAq3_PIzNSSsvCqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129018470748-7c9rgj80dj6n1mgdrksc2c6bise711j5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
